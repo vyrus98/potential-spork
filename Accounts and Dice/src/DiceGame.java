@@ -47,7 +47,7 @@ public class DiceGame {
 		TwoDice compRoll = new TwoDice();
 		TwoDice userRoll = new TwoDice();
 		//begin game as infinite loop
-		while (true) {
+		while (funds > 0) {
 			
 			//read user input
 			String input = readString();
@@ -62,7 +62,7 @@ public class DiceGame {
 				//try catch for parsing a double out of your input
 				try {
 					
-					bet  = ((int)(Double.parseDouble(readString())*100)/100);
+					bet  = ((int)(Double.parseDouble(readString())*100)/100.0);
 					
 					//check that the amount user is betting is a real amount (greater than 1 cent, not more than your available funds)
 					if (bet > 0.0 && bet <= funds) {
